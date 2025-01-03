@@ -262,51 +262,80 @@
     </footer>
 
     <script>
-            const products = {
+        const products = {
             hnm: [
-                { name: 'Stylish Blazer', image: 'blazer.jpg' },
+            { name: 'Stylish Blazer', image: 'blazer.jpg' },
                 { name: 'Casual T-shirt', image: 'tshirt.jpg' },
                 { name: 'Formal Pants', image: 'pants.jpg' },
                 { name: 'Summer Dress', image: 'dress.jpg' },
-                { name: 'Denim Jacket', image: 'jacket.jpg' }
+                { name: 'Denim Jacket', image: 'jacket.jpg' },
+                { name: 'Winter Coat', image: 'coat.jpg' },
+                { name: 'Sleeveless Top', image: 'sleeveless.jpg' },
+                { name: 'Sports Shorts', image: 'short.jpg' },
+                { name: 'Ankle Boots', image: 'boots.jpg' },
+                { name: 'Leather Belt', image: 'belt.jpg' }
             ],
             gap: [
-                { name: 'Classic Jeans', image: 'jeans.jpg' },
+            { name: 'Classic Jeans', image: 'jeans.jpg' },
                 { name: 'Chino Shorts', image: 'shorts.jpg' },
                 { name: 'Pencil Skirt', image: 'skirt.jpg' },
                 { name: 'Jogger Pants', image: 'joggers.jpg' },
-                { name: 'Cargo Pants', image: 'cargo.jpg' }
+                { name: 'Cargo Pants', image: 'cargo.jpg' },
+                { name: 'Fleece Jacket', image: 'fleece.jpg' },
+                { name: 'Graphic Tee', image: 'tee.jpg' },
+                { name: 'Relaxed Fit Pants', image: 'relaxed.jpg' },
+                { name: 'Button-Up Shirt', image: 'shirt.jpg' },
+                { name: 'Warm Sweater', image: 'sweater.jpg' }
             ],
             geneMartino: [
-                { name: 'Elegant Shawl', image: 'shawl.jpg' },
-                { name: 'Printed Hijab', image: 'hijab.jpg' },
-                { name: 'Silk Scarf', image: 'scarf.jpg' },
-                { name: 'Cotton Hijab', image: 'cotton.jpg' },
-                { name: 'Chiffon Wrap', image: 'wrap.jpg' }
+            { name: 'Elegant Shawl', image: 'shawl.jpg' },
+            { name: 'Printed Hijab', image: 'hijab.jpg' },
+            { name: 'Silk Scarf', image: 'scarf.jpg' },
+            { name: 'Cotton Hijab', image: 'cotton.jpg' },
+            { name: 'Chiffon Wrap', image: 'wrap.jpg' },
+            { name: 'Pashmina', image: 'pashmina.jpg' },
+            { name: 'Square Hijab', image: 'square.jpg' },
+            { name: 'Lace Wrap', image: 'lace.jpg' },
+            { name: 'Velvet Shawl', image: 'velvet.jpg' },
+            { name: 'Turban Style', image: 'turban.jpg' }
             ],
             elianto: [
-                { name: 'Floral Perfume', image: 'floral.jpg' },
-                { name: 'Citrus Cologne', image: 'citrus.jpg' },
-                { name: 'Woody Eau De Parfum', image: 'woody.jpg' },
-                { name: 'Ocean Mist', image: 'ocean.jpg' },
-                { name: 'Rose Essence', image: 'rose.jpg' }
+            { name: 'Floral Perfume', image: 'floral.jpg' },
+            { name: 'Citrus Cologne', image: 'citrus.jpg' },
+            { name: 'Woody Eau De Parfum', image: 'woody.jpg' },
+            { name: 'Ocean Mist', image: 'ocean.jpg' },
+            { name: 'Rose Essence', image: 'rose.jpg' },
+            { name: 'Vanilla Bliss', image: 'vanilla.jpg' },
+            { name: 'Spicy Amber', image: 'amber.jpg' },
+            { name: 'Lavender Fields', image: 'lavender.jpg' },
+            { name: 'Jasmine Glow', image: 'jasmine.jpg' },
+            { name: 'Fresh Mint', image: 'mint.jpg' }
             ],
             cartier: [
-                { name: 'Gold Necklace', image: 'necklace.jpg' },
-                { name: 'Silver Bracelet', image: 'bracelet.jpg' },
-                { name: 'Diamond Ring', image: 'ring.jpg' },
-                { name: 'Pearl Earrings', image: 'earrings.jpg' },
-                { name: 'Luxury Watch', image: 'watch.jpg' }
+            { name: 'Gold Necklace', image: 'necklace.jpg' },
+            { name: 'Silver Bracelet', image: 'bracelet.jpg' },
+            { name: 'Diamond Ring', image: 'ring.jpg' },
+            { name: 'Pearl Earrings', image: 'earrings.jpg' },
+            { name: 'Luxury Watch', image: 'watch.jpg' },
+            { name: 'Sapphire Pendant', image: 'sapphire.jpg' },
+            { name: 'Ruby Brooch', image: 'ruby.jpg' },
+            { name: 'Emerald Choker', image: 'emerald.jpg' },
+            { name: 'Platinum Cufflinks', image: 'cufflinks.jpg' },
+            { name: 'Rose Gold Bangles', image: 'bangles.jpg' }
             ]
         };
-
+    
+        let currentBrand = ''; // Variable to store the selected brand
+    
         function showDescriptionAndQuiz(brand) {
             const descriptionSection = document.getElementById('description-section');
             const quizSection = document.getElementById('quiz-section');
             const productSection = document.getElementById('product-section');
             const productList = document.getElementById('product-list');
-
-            if (brand === 'h&m') {
+    
+            currentBrand = brand; // Store the selected brand
+    
+            if (brand === 'hnm') {
                 document.getElementById('description-title').textContent = 'About H&M';
                 document.getElementById('description-text').textContent = 'H&M offers a wide variety of stylish and affordable clothing for all occasions, perfect for updating your wardrobe.';
                 document.getElementById('quiz-title').textContent = 'Find Your Perfect Outfit';
@@ -327,11 +356,11 @@
                 document.getElementById('description-text').textContent = 'Cartier offers luxurious accessories that elevate your style with their timeless elegance and exceptional craftsmanship.';
                 document.getElementById('quiz-title').textContent = 'Find Your Perfect Accessory';
             }
-
+    
             // Show description and quiz sections
             descriptionSection.style.display = 'block';
             quizSection.style.display = 'block';
-
+    
             // Populate products
             productList.innerHTML = '';
             products[brand].forEach(product => {
@@ -343,28 +372,31 @@
                 `;
                 productList.appendChild(productItem);
             });
-
+    
             productSection.style.display = 'block';
         }
-
+    
         function getSuggestion() {
             const event = document.getElementById('event').value;
             const time = document.getElementById('time').value;
             const style = document.getElementById('style').value;
-
-            let suggestion = '';
-            if (event === 'wedding' && style === 'glamorous') {
-                suggestion = 'We recommend luxurious pieces for weddings with glamorous designs.';
-            } else if (event === 'work' && style === 'simple') {
-                suggestion = 'Try simple and elegant options that fit professional settings.';
-            } else {
-                suggestion = 'Explore versatile options to suit any event or style.';
+    
+            if (!currentBrand) {
+                alert('Please select a brand first.');
+                return;
             }
-
+    
+            const randomProduct = products[currentBrand][Math.floor(Math.random() * products[currentBrand].length)];
+            
             const suggestionBox = document.getElementById('suggestion');
-            suggestionBox.innerHTML = `<p>${suggestion}</p>`;
+            suggestionBox.innerHTML = `
+                <p>Based on your preferences, we recommend:</p>
+                <p><strong>${randomProduct.name}</strong></p>
+                <img src="${randomProduct.image}" alt="${randomProduct.name}" style="width: 150px; border-radius: 5px;">
+            `;
             suggestionBox.style.display = 'block';
         }
     </script>
+    
 </body>
 </html>
