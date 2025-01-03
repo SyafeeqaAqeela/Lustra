@@ -22,9 +22,7 @@
 
         main {
             flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 2rem;
         }
 
         footer {
@@ -53,26 +51,101 @@
             100% { background-position: 0% 50%; }
         }
 
-        .contact-section {
-            margin: 2rem;
-            padding: 2rem;
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .hero img {
             width: 100%;
-            max-width: 600px;
-            background: #FFF;
+            filter: brightness(0.5);
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-family: 'Glamor', sans-serif;
+        }
+
+        .introducing-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile {
+            display: inline-block;
+            width: 250px;
+            text-align: center;
+            margin: 1rem;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            border: 5px solid #D2B68A;
+            width: 150px;
+            height: 150px;
+        }
+
+        .profile h3 {
+            margin: 1rem 0 0.5rem;
+        }
+
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 4px 6px;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: linear-gradient(90deg, #D2B68A, #FFF1C0);
+            padding: 1rem;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
         }
 
-        .contact-section label {
+        .contact-card p {
+            margin: 0.7rem 0.1em;
+        }
+
+        #map {
+            margin: 2rem auto;
+            max-width: 600px;
+            height: 300px;
+            background: url('map-placeholder.jpg') center/cover no-repeat;
+            border: 2px solid #D2B68A;
+            border-radius: 10px;
+        }
+
+        .contact-form-section {
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            margin: 2rem auto;
+            max-width: 600px;
+            background: #FFF;
+            padding: 2rem 4em;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
             display: block;
-            font-weight: bold;
             margin-top: 1rem;
+            font-weight: bold;
         }
 
-        .contact-section input, .contact-section textarea {
+        .contact-form input, .contact-form textarea {
             width: 100%;
-            max-width: 500px;
             padding: 0.8rem;
             margin: 0.5rem 0 1rem;
             border: 2px solid #D2B68A;
@@ -82,7 +155,7 @@
             color: #1a1a1a;
         }
 
-        .contact-section button {
+        .contact-form button {
             padding: 0.8rem 1.5rem;
             background: #D2B68A;
             color: black;
@@ -94,134 +167,88 @@
             transition: background 0.3s ease, color 0.3s ease;
         }
 
-        .contact-section button:hover {
+        .contact-form button:hover {
             background: #FFF1C0;
             color: #1a1a1a;
         }
+        .maps-section {
+    text-align: center; /* Center-align the content */
+    margin-top: 2rem;
+}
+
+.map {
+    margin: 1rem auto; /* Center the maps vertically */
+    width: 90%; /* Adjust to almost full width */
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
+    border-radius: 10px; /* Rounded corners for maps */
+    overflow: hidden; /* Hide overflowing corners */
+}
+
+.map iframe {
+    width: 100%; /* Full width inside the container */
+    height: 300px; /* Adjust the height to fit */
+    border: 0; /* Remove the iframe border */
+}
+
+        
     </style>
 </head>
 <body>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact</title>
-        <link rel="stylesheet" href="styles.css">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900&display=swap');
-    
-            html, body {
-                margin: 0;
-                padding: 0;
-                font-family: 'Glamor', sans-serif;
-                background-color: #EEE5D9;
-                height: 100%;
-                overflow-y: auto;
-                scroll-behavior: smooth;
-                display: flex;
-                flex-direction: column;
-            }
-    
-            main {
-                flex-grow: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-    
-            footer {
-                background: linear-gradient(90deg, #D2B68A, #FFF1C0, #D2B68A);
-                background-size: 300% 300%;
-                animation: glitter 5s linear infinite;
-                color: black;
-                text-align: center;
-                padding: 2rem;
-            }
-    
-            .contact-icons {
-                display: flex;
-                justify-content: center;
-                gap: 1rem;
-                margin-bottom: 1rem;
-            }
-    
-            .contact-icons i {
-                font-size: 2rem;
-            }
-    
-            @keyframes glitter {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-    
-            .contact-section {
-                margin: 2rem;
-                padding: 2rem;
-                width: 100%;
-                max-width: 600px;
-                background: #FFF;
-                border-radius: 10px;
-                text-align: center;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-    
-            .contact-section label {
-                display: block;
-                font-weight: bold;
-                margin-top: 1rem;
-            }
-    
-            .contact-section input, .contact-section textarea {
-                width: 100%;
-                max-width: 500px;
-                padding: 0.8rem;
-                margin: 0.5rem 0 1rem;
-                border: 2px solid #D2B68A;
-                border-radius: 8px;
-                font-size: 1rem;
-                background-color: #FFF1C0;
-                color: #1a1a1a;
-            }
-    
-            .contact-section button {
-                padding: 0.8rem 1.5rem;
-                background: #D2B68A;
-                color: black;
-                font-weight: bold;
-                border: 2px solid #D2B68A;
-                border-radius: 8px;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: background 0.3s ease, color 0.3s ease;
-            }
-    
-            .contact-section button:hover {
-                background: #FFF1C0;
-                color: #1a1a1a;
-            }
-        </style>
-    </head>
-    <body>
-    
-        <nav class="glitter-nav">
-            <a href="index.html"><img src="logo.png" alt="Logo" style="width: 150px; margin-right: auto;"></a>
-            <ul style="display: flex; justify-content: flex-end; align-items: center; margin-left: auto;">
-                <li><a href="brand.html">Brand</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="review.html">Review</a></li>
-            </ul>
-        </nav>
-    
-   
-    
+    <nav class="glitter-nav">
+        <a href="index.html"><img src="logo.png" alt="Logo" style="width: 150px; margin-right: auto;"></a>
+        <ul style="display: flex; justify-content: flex-end; align-items: center; margin-left: auto;">
+            <li><a href="brand.html">Brand</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="review.html">Review</a></li>
+        </ul>
+    </nav>
 
-    <main>
-        <div id="contact" class="contact-section">
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="partner-hero.jpg" alt="Partner in Lustra">
+        <div class="hero-text">Partner in Lustra</div>
+    </section>
+
+    <!-- Introducing Section -->
+    <section class="introducing-section">
+        <h2>Introducing</h2>
+        <div class="profile">
+            <img src="maheerah.jpeg" alt="Nur Maheerah">
+            <h3>Nur Maheerah</h3>
+            <p>Student of Digital Innovator Programme,<br>Kolej PERMATA@Pintar Negara,<br>Universiti Kebangsaan Malaysia.</p>
+        </div>
+        <div class="profile">
+            <img src="syafeeqa.jpeg" alt="Syafeeqa Aqeela">
+            <h3>Syafeeqa Aqeela</h3>
+            <p>Student of Digital Innovator Programme,<br>Kolej PERMATA@Pintar Negara,<br>Universiti Kebangsaan Malaysia.</p>
+        </div>
+    </section>
+
+    <!-- Contact Cards Section -->
+    <section class="contact-cards">
+        <div class="contact-card">
+            <h3>Syafeeqa</h3>
+            <p>📞 013-932 8551</p>
+            <p>✉️ syafeeqa.aqeela11@gmail.com</p>
+            <p>📍 Kolej PERMATA@Pintar Negara, UKM</p>
+        </div>
+        <div class="contact-card">
+            <h3>Maheerah</h3>
+            <p>📞 012-838 1237</p>
+            <p>✉️ maheerah11@gmail.com</p>
+            <p>📍 Kolej PERMATA@Pintar Negara, UKM</p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map"></section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="contact-form">
             <h2>Contact Us</h2>
-            <p>Feel free to reach out for inquiries or assistance.</p>
             <form action="send_email.php" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -235,7 +262,48 @@
                 <button type="submit">Submit</button>
             </form>
         </div>
-    </main>
+    </section>
+
+    <section class="maps-section">
+        <h2>Find Us</h2>
+        <div class="map">
+            <h3>H&M Shop</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789012345!2d101.6789012345678!3d3.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc1234567890ab%3A0x1234567890abcdef!2sH%26M!5e0!3m2!1sen!2smy!4v1612345678901!5m2!1sen!2smy"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <div class="map">
+            <h3>GAP Shop</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789012345!2d101.6789012345678!3d3.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc1234567890ab%3A0x1234567890abcdef!2sGAP!5e0!3m2!1sen!2smy!4v1612345678901!5m2!1sen!2smy"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <div class="map">
+            <h3>Elianto Shop</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789012345!2d101.6789012345678!3d3.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc1234567890ab%3A0x1234567890abcdef!2sElianto!5e0!3m2!1sen!2smy!4v1612345678901!5m2!1sen!2smy"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <div class="map">
+            <h3>Cartier Shop</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789012345!2d101.6789012345678!3d3.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc1234567890ab%3A0x1234567890abcdef!2sCartier!5e0!3m2!1sen!2smy!4v1612345678901!5m2!1sen!2smy"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <div class="map">
+            <h3>Gene Martino Shop</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789012345!2d101.6789012345678!3d3.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc1234567890ab%3A0x1234567890abcdef!2sGene+Martino!5e0!3m2!1sen!2smy!4v1612345678901!5m2!1sen!2smy"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+    
+    
 
     <footer>
         <h2>Contact Us</h2>
