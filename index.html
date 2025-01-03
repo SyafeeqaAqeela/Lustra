@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lustra</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+NL+Guides&family=Yeseva+One&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Glamor', sans-serif;
+    background-color: #EEE5D9;
+    min-height: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.login-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    background-color: #D2B68A;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: white;
+    color: #D2B68A;
+}
+
+.featured-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #F7F6F3;
+}
+
+.featured-brands {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.brand-card {
+    background: #FFF;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.brand-card p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.review-section {
+    padding: 2rem 0;
+    margin: 0;
+    background-color: #EEE5D9;
+}
+.review-section h2 {
+    background-color: #222D52; /* Box color */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    padding: 0.5rem 1rem; /* Add padding around the text */
+    margin: 0 auto; /* Center the heading box */
+    display: inline-block; /* Shrink to fit the content */
+    border-radius: 8px; /* Add rounded corners */
+    font-size: 1.5rem; /* Adjust the font size */
+    font-family: 'Glamor', sans-serif; /* Apply the desired font */
+    border: 2px solid #D2B68A; /* Outline color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+}
+
+
+
+.review-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical overflow */
+    width: calc(100vw - 2rem); /* Use the full width of the viewport with gap */
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    scrollbar-width: thin; /* Thin scrollbar for aesthetics */
+}
+
+.review-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.review-container::-webkit-scrollbar-thumb {
+    background-color: #D2B68A;
+    border-radius: 4px;
+}
+
+
+.review-box {
+    flex: 0 0 auto;
+    width: 300px; /* Card width */
+    height: 350px; /* Card height */
+    perspective: 1000px; /* For the 3D flip effect */
+    margin-right: 1.5rem; /* Add more spacing between cards */
+}
+
+
+.review-card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.review-box:hover .review-card {
+    transform: rotateY(180deg); /* Flip effect */
+}
+
+.review-card-front, .review-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #D2B68A;
+}
+
+.review-card-front {
+    background: #1a1a4e;
+    color: white;
+}
+
+.review-card-front img {
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+.review-card-back {
+    background: #FFF1C0;
+    transform: rotateY(180deg);
+    color: black;
+}
+
+footer {
+    background: linear-gradient(90deg, #D2B68A, #FFF1C0, #D2B68A);
+    background-size: 300% 300%;
+    animation: glitter 5s linear infinite;
+    color: black;
+    text-align: center;
+    padding: 2rem;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-icons i {
+    font-size: 2rem;
+}
+
+@keyframes glitter {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.review-section img{
+    height: 190px;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="glitter-nav">
+        <a href="index.html"><img src="logo.png" alt="Logo" style="width: 150px; margin-right: auto;"></a>
+        <ul style="display: flex; justify-content: flex-end; align-items: center; margin-left: auto;">
+            <li><a href="brand.html">Brand</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="review.html">Review</a></li>
+        </ul>
+    </nav>
+
+    <div id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to</h1>
+            <p>Lustra</p>
+            <button onclick="location.href='login.html'" class="login-button">Login</button>
+        </div>
+    </div>
+
+    <section class="featured-section">
+        <h2>Featured Brands</h2>
+        <div class="featured-brands">
+            <div class="brand-card">
+                <p>Furla</p>
+                <img src="furla-logo.png" alt="Furla Logo">
+                <p class="description">Elegant bags and accessories.</p>
+            </div>
+            <div class="brand-card">
+                <p>Elianto</p>
+                <img src="elianto-logo.png" alt="Elianto Logo">
+                <p class="description">Affordable cosmetics and skincare.</p>
+            </div>
+            <div class="brand-card">
+                <p>Shein</p>
+                <img src="shein-logo.png" alt="Shein Logo">
+                <p class="description">Quality fashion wear.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="review-section">
+        <h2>Customer Reviews</h2>
+        <div class="review-container">
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="1.png" alt="Furla Logo">
+                        <p>John Doe</p>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Amazing quality!, I cannot find any service better than this!!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="2.png" alt="Shein Logo">
+                        <p>Jane Smith</p>
+                        <div class="review-stars">★★★★☆</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Affordable and trendy. This is the kind of service that i always obssed with"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="3.png" alt="Elianto Logo">
+                        <p>Emily Johnson</p>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Love the selection!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="4.png" alt="M&B Logo">
+                        <p>Michael Lee</p>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Excellent service."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="5.png" alt="Furla Logo">
+                        <p>Anna White</p>
+                        <div class="review-stars">★★★★☆</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Great variety!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="6.png" alt="Elianto Logo">
+                        <p>Chris Evans</p>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Outstanding quality!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="7.png" alt="Shein Logo">
+                        <p>Sophia Green</p>
+                        <div class="review-stars">★★★★☆</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Very satisfied."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                                               <img src="8.png" alt="M&B Logo">
+                        <p>Oliver Gray</p>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Best shopping experience!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="9.png" alt="Furla Logo">
+                        <p>Emma Davis</p>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Exceptional products!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="10.png" alt="Elianto Logo">
+                        <p>William King</p>
+                        <div class="review-stars">★★★★☆</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Good prices."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="review-card">
+                    <div class="review-card-front">
+                        <img src="11.png" alt="Shein Logo">
+                        <p>Isabella Hall</p>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-card-back">
+                        <p>"Excellent overall."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Contact Us</h2>
+        <div class="contact-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-tiktok"></i>
+            <i class="fas fa-envelope"></i>
+        </div>
+        <p><i class="fas fa-phone"></i> 013-932 8551 (Syafeeqa)</p>
+        <p><i class="fas fa-phone"></i> 012-838 1237 (Maheerah)</p>
+        <p><i class="fas fa-map-marker-alt"></i> Kolej Permata@Pintar Negara, Seremban,<br>Institut Pendidikan Guru Kampus, Jalan Sikamat,<br>Maktab Perguruan Raja Melewar, 70400 Seremban, Negeri Sembilan</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const reviewContainer = document.querySelector(".review-container");
+        
+            let scrollInterval;
+        
+            function smoothScroll(direction) {
+                if (scrollInterval) clearInterval(scrollInterval);
+                scrollInterval = setInterval(() => {
+                    reviewContainer.scrollBy({
+                        left: direction === "right" ? 5 : -5, // Adjust scroll speed
+                        behavior: "smooth",
+                    });
+                }, 10); // Set a small delay for smoother scrolling
+            }
+        
+            reviewContainer.addEventListener("mouseenter", (e) => {
+                const rect = reviewContainer.getBoundingClientRect();
+                if (e.clientX > rect.right - 100) {
+                    smoothScroll("right");
+                } else if (e.clientX < rect.left + 100) {
+                    smoothScroll("left");
+                }
+            });
+        
+            reviewContainer.addEventListener("mousemove", (e) => {
+                const rect = reviewContainer.getBoundingClientRect();
+                if (e.clientX > rect.right - 100) {
+                    smoothScroll("right");
+                } else if (e.clientX < rect.left + 100) {
+                    smoothScroll("left");
+                } else {
+                    clearInterval(scrollInterval);
+                }
+            });
+        
+            reviewContainer.addEventListener("mouseleave", () => {
+                clearInterval(scrollInterval);
+            });
+        });
+        </script>
+        
+    
+</body>
+<script src="https://kit.fontawesome.com/9801d70b7f.js" crossorigin="anonymous"></script>
+</html>

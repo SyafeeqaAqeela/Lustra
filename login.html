@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900&display=swap');
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Glamor', sans-serif;
+            background-color: #EEE5D9;
+            height: 100%;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #D2B68A, #FFF1C0, #D2B68A);
+            background-size: 300% 300%;
+            animation: glitter 5s linear infinite;
+            color: black;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icons i {
+            font-size: 2rem;
+        }
+
+        @keyframes glitter {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .login-container {
+            background: #FFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 2px solid #D2B68A;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: #FFF1C0;
+            color: #1a1a1a;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #D2B68A;
+            color: black;
+            border: 2px solid #D2B68A;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background: #FFF1C0;
+            color: #1a1a1a;
+        }
+
+        .login-container p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .login-container a {
+            color: #D2B68A;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="glitter-nav">
+        <a href="index.html"><img src="logo.png" alt="Logo" style="width: 150px; margin-right: auto;"></a>
+        <ul style="display: flex; justify-content: flex-end; align-items: center; margin-left: auto;">
+            <li><a href="brand.html">Brand</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="review.html">Review</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="login-container">
+            <h1>Login</h1>
+            <form action="login_process.php" method="post">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <h2>Contact Us</h2>
+        <div class="contact-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-tiktok"></i>
+            <i class="fas fa-envelope"></i>
+        </div>
+        <p><i class="fas fa-phone"></i> 013-932 8551 (Syafeeqa)</p>
+        <p><i class="fas fa-phone"></i> 012-838 1237 (Maheerah)</p>
+        <p><i class="fas fa-map-marker-alt"></i> Kolej Permata@Pintar Negara, Seremban,<br>Institut Pendidikan Guru Kampus, Jalan Sikamat,<br>Maktab Perguruan Raja Melewar, 70400 Seremban, Negeri Sembilan</p>
+    </footer>
+
+</body>
+</html>
